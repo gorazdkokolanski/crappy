@@ -205,3 +205,21 @@
 .footer.paused {
   --animation-state: paused;
 }
+
+
+@media only screen and (max-width: 570px){
+  .footer--content{
+    flex-wrap: wrap;
+  }
+
+  .footer--input{
+    min-width: calc((100% - 53px) / 2);
+  }
+  
+}
+
+@media only screen and (max-width: 400px){
+  .footer--content{
+    gap: 10px;
+  }
+}
