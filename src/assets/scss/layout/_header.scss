@@ -130,6 +130,16 @@
   }
 }
 
+@media only screen and (max-width:570px){
+  p.text-shadow.stroke.upper.logo--title{
+    font-size: 10px;
+  }
+
+  .logo.flex .flex.logo--bird{
+    width: 20px;
+  }
+}
+
 @media only screen and (max-width:500px){
   .header{
     flex-direction: column;

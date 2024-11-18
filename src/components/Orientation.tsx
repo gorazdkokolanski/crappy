@@ -39,7 +39,7 @@ export default function Orientation({ state }: { state: Store }) {
       w[off]("orientationchange", handleOrientationChange);
     };
   }, []);
-
+  // fasle here so it never happens
   return false && (
     <div className="device-orientation flex column v-center text-center">
       <Text text={title} />
