@@ -43,6 +43,7 @@
       margin-left: min-max(20, 42);
     }
   }
+
   &--right {
     .open-connect {
       min-width: min-max(120, 300);
@@ -58,6 +59,7 @@
         display: flex;
         align-items: center;
       }
+
       span {
         filter: drop-shadow(0px var(--shadow) var(--color-black));
         position: relative;
@@ -83,6 +85,7 @@
       transform: translate(calc(50vw - 50% - min-max(16, 48)), calc(var(--scene-height) * 1.2 / 2 - 100%)) scale(3);
       transition: none;
     }
+
     .onloaded {
       opacity: 0;
       pointer-events: none;
@@ -103,11 +106,13 @@
   &:hover {
     --fill: #e0e0e0;
   }
+
   &:active {
     --shadow: 0px;
     transform: translateY(2px);
     --fill: #cbcbcb;
   }
+
   &:disabled {
     pointer-events: none;
     // --fill: var(--color-grey);
@@ -130,42 +135,76 @@
   }
 }
 
-@media only screen and (max-width:570px){
-  p.text-shadow.stroke.upper.logo--title{
-    font-size: 10px;
+@media only screen and (max-width: 620px) {
+  .pop_up.shop {
+    width: clamp(300px, 78.125vw, 1500px) !important;
   }
 
-  .logo.flex .flex.logo--bird{
-    width: 20px;
+  .pop_up.shop .wrapper--grid {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 
-  .lotti-animation-idle .svg-wrapper{
-    width: 135%!important;
+  .pop_up.shop .wrapper--cousins {
+    gap: 0 !important;
   }
 
-  .lotti-animation-idle{
-    width: 135%!important;
+  .pop_up.leader {
+    width: clamp(300px, 78.125vw, 1500px) !important;
+  }
+
+  .row.row_last .font-40 {
+    font-size: 8px !important;
+  }
+
+  .pop_up--scroller:has(~ .scroll-bar) {
+    padding-right: 10px !important;
+  }
+
+  .pop_up.achiev {
+    width: clamp(300px, 78.125vw, 1500px) !important;
   }
 }
 
-@media only screen and (max-width:500px){
-  .header{
+@media only screen and (max-width:570px) {
+  p.text-shadow.stroke.upper.logo--title {
+    font-size: 10px;
+  }
+
+  .logo.flex .flex.logo--bird {
+    width: 20px;
+  }
+
+  .lotti-animation-idle .svg-wrapper {
+    width: 135% !important;
+  }
+
+  .lotti-animation-idle {
+    width: 135% !important;
+  }
+
+  .lotti-animation-birds .svg-wrapper {
+    width: 135% !important;
+  }
+}
+
+@media only screen and (max-width:500px) {
+  .header {
     flex-direction: column;
     gap: 5px;
     margin-top: 5px;
   }
 
-  .header--left{
+  .header--left {
     justify-content: space-between;
   }
 
-  .header--right{
+  .header--right {
     justify-content: flex-end;
   }
 
-  .animation-history{
-    top: 70px!important;
-    max-height: calc(100dvh - clamp(35px, 5.2083333333vw, 100px) - 180px)!important;
+  .animation-history {
+    top: 70px !important;
+    max-height: calc(100dvh - clamp(35px, 5.2083333333vw, 100px) - 180px) !important;
   }
 
 }
