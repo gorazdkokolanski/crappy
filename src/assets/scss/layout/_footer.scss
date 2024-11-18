@@ -210,10 +210,31 @@
 @media only screen and (max-width: 570px){
   .footer--content{
     flex-wrap: wrap;
+    row-gap: 6px;
   }
 
   .footer--input{
     min-width: calc((100% - 53px) / 2);
+  }
+
+  .footer--input .navs{
+    flex-direction: column;
+  }
+
+  .footer--avatar>p{
+    font-size: 11px;
+  }
+
+  .footer--avatar{
+    width: 100%;
+  }
+
+  .footer--balance{
+    width: 100%;
+  }
+
+  .footer--balance .custom--wrapper{
+    padding: 10px 0;
   }
   
 }

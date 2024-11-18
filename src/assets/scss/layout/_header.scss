@@ -135,6 +135,10 @@
   }
 }
 
+.lotti-animation-scenes--wrapper{
+  min-width: 800px;
+}
+
 @media only screen and (max-width: 620px) {
   .pop_up.shop {
     width: clamp(310px, 78.125vw, 1500px) !important;
@@ -171,7 +175,7 @@
 
 @media only screen and (max-width:570px) {
   p.text-shadow.stroke.upper.logo--title {
-    font-size: 10px;
+    // font-size: 10px;
   }
 
   .logo.flex .flex.logo--bird {
@@ -189,6 +193,11 @@
   .lotti-animation-birds .svg-wrapper {
     width: 135% !important;
   }
+
+  .lotti-animation-birds.flex{
+    width: 120px!important;
+  }
+
 }
 
 @media only screen and (max-width:500px) {
@@ -208,7 +217,7 @@
 
   .animation-history {
     top: 70px !important;
-    max-height: calc(100dvh - clamp(35px, 5.2083333333vw, 100px) - 180px) !important;
+    max-height: calc(100dvh - clamp(35px, 5.2083333333vw, 100px) - 300px) !important;
   }
 
 }
