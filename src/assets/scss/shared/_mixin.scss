@@ -1,0 +1,62 @@
+@mixin webp {
+  body:global(.webp) & {
+    @content;
+  }
+}
+
+@mixin nowebp {
+  body:global(.nowebp) & {
+    @content;
+  }
+}
+
+// Hide scrollbar
+@mixin no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+@mixin font-face($name, $file-name, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+  $path: "/fonts/";
+
+  $extmods: (
+    eot: "?",
+    svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+    otf: "opentype",
+    ttf: "truetype"
+  );
+
+  $src: local(quote($name));
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + $file-name + "." + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    src: $src;
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+// Limit text block by lines num
+@mixin text-clamp($num: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-line-clamp: $num;
+  line-clamp: $num;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

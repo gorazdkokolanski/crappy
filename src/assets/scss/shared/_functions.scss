@@ -1,0 +1,28 @@
+@use "sass:math";
+
+
+@function px2vw($px, $def_screen: 1920) {
+  $vw: $def_screen * 0.01;
+  @return math.div($px, $vw) * 1vw;
+}
+// Convert px to vw
+// @function px2vw($px) {
+//   // Default viewport width
+//   $def_screen: 1920;
+
+//   $vw: $def_screen * 0.01;
+//   @return math.div($px, $vw) * 1vw;
+// }
+@function px2vw_mob($px) {
+  // Default viewport width
+  $def_screen: 360;
+
+  $vw: $def_screen * 0.01;
+  @return math.div($px, $vw) * 1vw;
+}
+@function min-max($min, $max) {
+  @return clamp($min * 1px, px2vw($max), $max * 1px);
+}
+@function min-max_mob($min, $max) {
+  @return clamp($min * 1px, px2vw_mob($min), $max * 1.2px);
+}

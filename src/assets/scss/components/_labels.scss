@@ -1,0 +1,31 @@
+.label {
+  display: flex;
+  flex: 1;
+  background-color: var(--color-white);
+  border-radius: min-max(2, 4);
+  filter: drop-shadow(0px var(--shadow) var(--color-black));
+  padding: min-max(6, 16) min-max(10, 24);
+  border: min-max(1, 2) solid transparent;
+
+  &.error {
+    border-color: var(--color-red);
+  }
+
+  input {
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: var(--color-black);
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}

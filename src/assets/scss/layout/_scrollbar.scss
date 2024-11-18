@@ -1,0 +1,22 @@
+.scroll-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: min-max(2, 8);
+  border: min-max(1, 4) solid var(--color-black);
+  background: var(--color-grey);
+  width: min-max(6, 16);
+  /* hard_drop_shadow */
+  // box-shadow: 0px 8px 0px 0px #000;
+
+  .scroll-track {
+    border-radius: min-max(2, 8);
+    background: var(--color-white-2);
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+}

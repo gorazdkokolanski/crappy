@@ -1,0 +1,215 @@
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+.custom {
+  --color: var(--color-white);
+  --padding: 6px;
+
+  @include max_1200 {
+    --padding: 2px;
+  }
+
+  display: flex;
+
+  &.md {
+    --padding: 4px;
+
+    @include max_1200 {
+      --padding: 1px;
+    }
+  }
+  &.md &--wrapper {
+    padding: min-max(3, 6);
+    gap: min-max(2, 8);
+  }
+
+  &--icon {
+    width: min-max(10, 28);
+    z-index: 1;
+    flex: none;
+
+    &.md {
+      width: min-max(8, 20);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &--text {
+    white-space: nowrap;
+    z-index: 1;
+  }
+  &--over {
+    border-radius: 6px;
+    background: var(--color);
+    padding-bottom: var(--padding);
+    width: 100%;
+
+    @include max_1200 {
+      border-radius: 2px;
+    }
+  }
+  &--wrapper {
+    padding: min-max(3, 11);
+    border-radius: 4px;
+    background: var(--color);
+    box-shadow: 0px var(--padding) 0px 0px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: min-max(4, 8);
+    position: relative;
+
+    @include max_1200 {
+      border-radius: 2px;
+    }
+
+    &.border {
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+      &::before {
+        border-radius: 4px;
+        // opacity: 0.2;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.1) 0%,
+          rgba(255, 255, 255, 0) 30%,
+          rgba(255, 255, 255, 0) 64%,
+          rgba(255, 255, 255, 0.2) 96%
+        );
+
+        @include max_1200 {
+          border-radius: 2px;
+        }
+      }
+      &::after {
+        inset: 2px;
+        border-radius: 2px;
+        background: var(--color);
+        @include max_1200 {
+          inset: 1px;
+          border-radius: 1px;
+        }
+      }
+    }
+  }
+
+  &:active,
+  &[data-active="true"] {
+    --padding: 0px;
+    margin-top: 6px;
+    // transform: translateY(6px);
+
+    @include max_1200 {
+      margin-top: 2px;
+    }
+  }
+  &[data-active="true"] {
+    pointer-events: none;
+  }
+
+  &.green:not(:disabled) &--over {
+    background-color: var(--color-green-dark);
+  }
+  &.green {
+    --color: var(--color-green-light);
+
+    &:hover {
+      --color: #95ff84;
+    }
+
+    &:active,
+    &[data-active="true"] {
+      --color: #4ea440;
+    }
+  }
+  &.red {
+    --color: var(--color-red);
+
+    &:hover {
+      --color: #ff5454;
+    }
+
+    &:active,
+    &[data-active="true"] {
+      --color: var(--color-red-dark);
+    }
+  }
+  &.blue {
+    --color: var(--color-blue-1);
+
+    &:hover {
+      --color: #3e58ff;
+    }
+
+    &:active,
+    &[data-active="true"] {
+      --color: #243394;
+    }
+  }
+  &.blue-light {
+    --color: var(--color-blue-light-2);
+
+    &:hover {
+      --color: #3e58ff;
+    }
+
+    &:active,
+    &[data-active="true"] {
+      --color: #243394;
+    }
+  }
+  &.yellow {
+    --color: var(--color-yellow-elements);
+
+    &:hover {
+      --color: #fff388;
+    }
+
+    &:active,
+    &[data-active="true"] {
+      --color: #b69900;
+    }
+  }
+
+  &:disabled {
+    --color: #9a9a9a;
+    // filter: grayscale(1);
+    pointer-events: none;
+  }
+}
+
+.custom-tab {
+  padding: min-max(8, 16);
+  background-color: var(--color-blue-1);
+  border-radius: 4px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+
+  @include max_1200 {
+    border-radius: 2px;
+  }
+
+  * {
+    pointer-events: none;
+  }
+
+  &.active {
+    pointer-events: none;
+    color: var(--color-yellow-elements);
+    background-color: var(--color-blue-light-3);
+  }
+}

@@ -1,0 +1,88 @@
+@include font-face("Nunito Black", "Nunito-Black", 900, normal, woff2); //
+@include font-face("Nunito Black", "Nunito-SemiBold", 600, normal, woff2); //
+@include font-face("Nunito Medium", "Nunito-Medium", 500, normal, woff2); //
+:root {
+  --nunito-black: "Nunito Black", sans-serif;
+  --nunito-semi: "Nunito SemiBold", sans-serif;
+  --nunito-medium: "Nunito Medium", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+@mixin nunito {
+  font-size: min-max(42, 156);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  @include nunito();
+}
+
+.font-48 {
+  font-size: min-max(13, 48);
+  letter-spacing: min-max(0.48, 0.96);
+}
+
+.font-40 {
+  font-size: min-max(13, 40);
+  line-height: 100%;
+  letter-spacing: min-max(0.4, 0.8);
+}
+.font-36 {
+  font-size: min-max(12, 36);
+  line-height: 100%;
+  letter-spacing: min-max(0.37, 0.72);
+}
+.font-32 {
+  font-size: min-max(11, 32);
+  line-height: 100%;
+  letter-spacing: min-max(0.32, 0.64);
+}
+.font-28 {
+  font-size: min-max(10, 28);
+  line-height: 100%;
+  letter-spacing: min-max(0.28, 0.56);
+}
+.font-24 {
+  font-size: min-max(8, 24);
+  line-height: normal;
+  letter-spacing: min-max(0.24, 0.48);
+}
+.font-20 {
+  font-size: min-max(7, 20);
+  line-height: 111%;
+  letter-spacing: min-max(0.18, 0.36);
+
+  &-md {
+    font-size: min-max(7, 20);
+    font-family: var(--nunito-semi);
+    font-weight: 600;
+  }
+}
+
+.font-18 {
+  font-size: min-max(6, 18);
+  line-height: 140%;
+  letter-spacing: min-max(0.2, 0.4);
+}
+.font-16 {
+  font-family: var(--nunito-medium);
+  font-size: min-max(6, 16);
+  line-height: 111%;
+  letter-spacing: min-max(0.16, 0.32);
+  font-weight: 500;
+
+  &-bl {
+    font-family: var(--nunito-medium);
+    font-size: min-max(6, 16);
+    letter-spacing: min-max(0.16, 0.32);
+  }
+}

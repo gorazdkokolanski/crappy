@@ -1,0 +1,207 @@
+.footer {
+  --animation-time: 10s;
+  --animation-state: running;
+  background-color: var(--color-yellow-bg);
+  position: relative;
+
+  &--loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: min-max(16, 56);
+
+    .progress {
+      border-width: min-max(1, 4) 0px;
+      border-color: #2e3192;
+      border-style: solid;
+      position: absolute;
+      inset: 0;
+      background: #5d70cf url("/img/back/progress_svg.svg") 0% / contain repeat;
+      animation: var(--animation-time) linear infinite moveBack;
+      animation-play-state: var(--animation-state);
+
+      @keyframes moveBack {
+        from {
+          background-position-x: 0%;
+        }
+        to {
+          background-position-x: -120%;
+        }
+      }
+    }
+
+    p {
+      &.loaded {
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s 0.3s linear;
+      }
+    }
+
+    .line {
+      position: absolute;
+      inset: 0;
+      border: min-max(1, 3) solid var(--color-black);
+      background: var(--color-grey);
+      transition: left 0.6s linear;
+    }
+
+    .text-shadow {
+      --stroke: 5px;
+      filter: none;
+
+      @include max_1200 {
+        --stroke: 2px;
+      }
+    }
+  }
+
+  &--content {
+    padding: min-max(15, 30) min-max(16, 48) min-max(15, 40);
+    // background-color: var(--color-yellow-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: min-max(15, 48);
+
+    &.transition {
+      transition: 0.3s 0.3s linear;
+    }
+
+    &.loading {
+      opacity: 0;
+      pointer-events: none;
+      transition: none;
+    }
+  }
+  &--hash {
+    flex-direction: column;
+    gap: min-max(5, 10);
+    color: var(--color-black);
+
+    &-icon {
+      width: min-max(10, 32);
+      aspect-ratio: 1;
+      fill: var(--color-black);
+    }
+  }
+  &--input {
+    display: flex;
+    flex-direction: column;
+    gap: min-max(5, 24);
+    flex: 1;
+    max-width: 700px;
+    position: relative;
+
+    @include max_1200 {
+      gap: min-max(5, 15);
+    }
+
+    .info {
+      gap: min-max(4, 8);
+      white-space: nowrap;
+      color: var(--color-black);
+
+      .icon {
+        margin: -5px 0;
+      }
+
+      .status {
+        background-color: var(--color-grey);
+        mask: url("/img/icons/accept.svg") center/cover no-repeat;
+
+        &.active {
+          background: var(--color-green-light);
+        }
+        &.error {
+          mask: url("/img/icons/alert.svg") center/cover no-repeat;
+          background-color: var(--color-red);
+        }
+      }
+    }
+
+    .navs {
+      gap: min-max(4, 24);
+
+      .custom {
+        flex: 1;
+      }
+    }
+
+    .tooltip-error {
+      top: auto;
+      bottom: 100%;
+      transform: translate(-50%, calc(min-max(5, 20) * -1));
+      // margin-bottom: min-max(5, 24);
+
+      @include min_1025 {
+        max-width: 90%;
+      }
+
+      .subtitle {
+        font-size: min-max(11, 32);
+      }
+    }
+  }
+
+  &--avatar {
+    flex-direction: column;
+    gap: min-max(5, 10);
+
+    .none {
+      filter: grayscale(1);
+    }
+    .user-avatar {
+      width: min-max(30, 78);
+    }
+
+    .pers {
+      gap: min-max(3, 6);
+    }
+  }
+
+  &--balance {
+    flex-direction: column;
+    gap: min-max(5, 10);
+
+    .title {
+      color: var(--color-black);
+      justify-content: space-between;
+      gap: min-max(20, 60);
+      align-items: flex-end;
+
+      .icon-coin {
+        margin-right: min-max(3, 5);
+      }
+    }
+  }
+
+  .crap-place-bet {
+    min-width: min-max(140, 290);
+
+    background: url("/img/icons/orientation.svg") center/cover no-repeat;
+
+    &.crapping {
+      pointer-events: none;
+    }
+  }
+
+  &--navs {
+    position: absolute;
+    display: flex;
+    gap: 20px;
+    bottom: 100%;
+    z-index: 222;
+
+    button {
+      padding: 10px;
+      background-color: red;
+    }
+  }
+}
+
+.footer.paused {
+  --animation-state: paused;
+}

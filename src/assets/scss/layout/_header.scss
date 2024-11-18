@@ -1,0 +1,131 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 min-max(16, 48);
+  z-index: 23;
+  min-height: min-max(35, 100);
+
+  .onloaded {
+    transition: opacity 0.3s 0.3s linear;
+  }
+
+  .logo {
+    font-size: min-max(20, 56);
+    align-items: center;
+    transition: transform 0.3s linear;
+
+    &--title {
+      --shadow: 6px;
+
+      @include max_1200 {
+        --shadow: 2px;
+      }
+    }
+
+    &--bird {
+      width: min-max(30, 85);
+      transform: translateX(-30%);
+      z-index: -1;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &--left {
+    .buttons {
+      margin-left: min-max(20, 42);
+    }
+  }
+  &--right {
+    .open-connect {
+      min-width: min-max(120, 300);
+    }
+  }
+
+  .buttons {
+    align-items: center;
+    gap: min-max(18, 54);
+
+    .ticker-view {
+      .ticker-digit {
+        display: flex;
+        align-items: center;
+      }
+      span {
+        filter: drop-shadow(0px var(--shadow) var(--color-black));
+        position: relative;
+        z-index: 1;
+        letter-spacing: clamp(0.32px, 0.0333333333vw, 0.64px);
+
+        &::after {
+          content: attr(data-text);
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: -1;
+          pointer-events: none;
+          -webkit-text-stroke: var(--stroke);
+          -webkit-text-stroke-color: var(--color-black);
+        }
+      }
+    }
+  }
+
+  &.loading {
+    .logo {
+      transform: translate(calc(50vw - 50% - min-max(16, 48)), calc(var(--scene-height) * 1.2 / 2 - 100%)) scale(3);
+      transition: none;
+    }
+    .onloaded {
+      opacity: 0;
+      pointer-events: none;
+      transition: none;
+    }
+  }
+}
+
+.general-tab {
+  display: flex;
+  --fill: var(--color-white);
+
+  svg {
+    fill: var(--fill);
+    stroke: var(--color-black);
+  }
+
+  &:hover {
+    --fill: #e0e0e0;
+  }
+  &:active {
+    --shadow: 0px;
+    transform: translateY(2px);
+    --fill: #cbcbcb;
+  }
+  &:disabled {
+    pointer-events: none;
+    // --fill: var(--color-grey);
+    --fill: var(--color-yellow-bg);
+  }
+}
+
+.allow-play-button {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(calc(var(--scene-height) * 1.2 / 2 + 200%));
+  z-index: 22;
+  min-width: min-max(150, 380);
+
+  &:has(.hidden) {
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+  }
+}

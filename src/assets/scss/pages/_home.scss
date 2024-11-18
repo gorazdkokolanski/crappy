@@ -1,0 +1,44 @@
+section {
+  display: flex;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.section-wrapper {
+  transition: opacity 0.3s 0.3s linear;
+
+  &.loading {
+    opacity: 0;
+    pointer-events: none;
+    transition: none;
+  }
+}
+
+.bushes {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  pointer-events: none;
+  display: flex;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.idle-navs {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  gap: 10px;
+  z-index: 222;
+
+  button {
+    padding: 20px;
+    background: var(--color-green-dark);
+  }
+}
