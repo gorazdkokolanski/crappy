@@ -213,12 +213,18 @@
     row-gap: 6px;
   }
 
+  .footer--hash{
+    position: absolute;
+    bottom: 65px;
+    left: 20px;
+  }
+
   .footer--input{
     min-width: calc((100%));
   }
 
   .footer--input:nth-child(2){
-    min-width: calc(100% - 63px);
+    // min-width: calc(100% - 63px);
   }
 
   .footer--input .navs{
