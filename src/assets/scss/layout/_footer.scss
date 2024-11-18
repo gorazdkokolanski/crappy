@@ -214,11 +214,14 @@
   }
 
   .footer--input{
-    min-width: calc((100% - 53px) / 2);
+    min-width: calc((100%));
+  }
+
+  .footer--input:nth-child(2){
+    min-width: calc(100% - 63px);
   }
 
   .footer--input .navs{
-    flex-direction: column;
   }
 
   .footer--avatar>p{
