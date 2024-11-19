@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Token } from "../../../types/types";
 import ButtonConnect from "../../../components/ButtonConnect";
 import generalNabs from "/img/icons/general-navs.svg";
+import { Store } from "../../../types/state";
 
 
 
@@ -43,7 +44,7 @@ const Tab = ({ tab, state, opened }: { tab: string, state: Store, opened: any })
 
 }
 
-export default function Balance({ children, myBalance, account, state }: { myBalance: Token, children: any, account: any }) {
+export default function Balance({ children, myBalance, account, state }: { myBalance: Token, children: any, account: any, state: Store, }) {
   const [fontSize, setFontSize] = useState(clampFont())
   const { web3 } = state.getState();
   const opened = state.getState().opened_popup.open
