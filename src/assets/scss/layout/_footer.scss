@@ -214,9 +214,9 @@
   }
 
   .footer--hash{
-    position: absolute;
-    bottom: 65px;
-    left: 20px;
+    // position: absolute;
+    // bottom: 65px;
+    // left: 20px;
   }
 
   .footer--input{
@@ -235,11 +235,10 @@
   }
 
   .footer--avatar{
-    width: 100%;
   }
 
   .footer--balance{
-    width: 100%;
+    width: calc(100% - 175px);
   }
 
   .footer--balance .custom--wrapper{
