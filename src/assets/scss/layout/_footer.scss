@@ -214,9 +214,13 @@
   }
 
   .footer--hash{
-    // position: absolute;
-    // bottom: 65px;
-    // left: 20px;
+    position: absolute;
+    top: -38px;
+    left: 20px;
+  }
+  footer.footer{
+    overflow: visible;
+    z-index: 9999;
   }
 
   .footer--input{
