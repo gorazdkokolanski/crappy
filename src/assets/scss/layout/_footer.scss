@@ -220,7 +220,7 @@
   }
   footer.footer{
     overflow: visible;
-    z-index: 9999;
+    z-index: 9;
   }
 
   .footer--input{
@@ -255,6 +255,10 @@
 
   .footer--balance .custom--wrapper{
     padding: 10px 0;
+  }
+
+  .footer--balance button.custom.upper.green.open-connect{
+    width: 100%;
   }
   
 }

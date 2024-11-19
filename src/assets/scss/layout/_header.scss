@@ -135,6 +135,14 @@
   }
 }
 
+.allow-play-button{
+  min-width: clamp(150px, 39.7916666667vw, 380px);
+}
+
+.allow-play-button .custom--wrapper{
+  padding: 5px 0;
+}
+
 .lotti-animation-scenes--wrapper{
   min-width: 800px;
 }
@@ -171,6 +179,10 @@
   .pop_up.achiev .wrapper--grid .row{
     padding-left: 0px!important;
   }
+
+  .pop_up.history {
+    width: clamp(310px, 78.125vw, 1500px) !important;
+}
 }
 
 @media only screen and (max-width:570px) {
@@ -222,7 +234,13 @@
 
   .animation-history {
     top: 70px !important;
-    max-height: calc(100dvh - clamp(35px, 5.2083333333vw, 100px) - 285px) !important;
+    max-height: calc(100dvh - clamp(35px, 5.2083333333vw, 100px) - 250px) !important;
   }
 
+}
+
+@media only screen and (max-width:410px) {
+  .animation-history {
+    max-height: calc(100dvh - clamp(35px, 5.2083333333vw, 100px) - 260px) !important;
+  }
 }

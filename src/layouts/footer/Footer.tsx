@@ -187,7 +187,7 @@ export default function Footer(props: Props) {
         <InputCashout cashoutInput={cashoutInputState} error={isSomeError.cashout} account={account} />
         <InputCrappy crappyInput={crappyInputState} error={isSomeError.crappy} myBal={myBalance.crappy} account={account} maxBet={max_bet_value} />
         <Avatar {...{ state, account }} />
-        <Balance {...{ myBalance, account }}>
+        <Balance {...{ myBalance, account, state }}>
           <Button
             text={"crap"}
             className={"w-full crap-place-bet" + (isCrapping ? " crapping" : "")}

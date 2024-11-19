@@ -92,6 +92,7 @@ export default function Header({ state, status }: Props) {
 
 
           {leftTabs.map((t) => <Tab tab={t} key={t} {...{ state, opened }} />)}
+          <Tab tab={"settings"} {...{ state, opened }} />
         </div>
       </div>
 
@@ -136,11 +137,11 @@ export default function Header({ state, status }: Props) {
           {web3.account && <UserAvatar lvl={Number(myRewardsData.levelOf)} />}
 
           {!web3.account
-            ? <ButtonConnect state={state} />
+            ? <></>
             : <Tab tab={"history"} {...{ state, opened }} />
           }
 
-          <Tab tab={"settings"} {...{ state, opened }} />
+          
         </div>
       </div>
 
