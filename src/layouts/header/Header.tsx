@@ -82,12 +82,12 @@ export default function Header({ state, status }: Props) {
     <header className={"header" + (status.loaded ? "" : " loading")} data-orientation="true">
 
       <div className="header--left flex">
-        {/* <div className="logo flex">
+        <div className="logo flex">
           <Text className="logo--title" text={title} />
           <div className="flex logo--bird">
             <img src={bird} alt={title} />
           </div>
-        </div> */}
+        </div>
 
         <div className={"buttons flex onloaded"}>
 
