@@ -8,6 +8,7 @@ import ButtonConnect from "../../components/ButtonConnect";
 import { AnimatedCounter } from "react-animated-counter";
 import UserAvatar from "../../components/UserAvatar";
 import { formatLargeNumber } from "../../utils/utils";
+import ButtonBuyCrappy from "../../components/ButtonBuyCrappy";
 
 
 
@@ -81,18 +82,17 @@ export default function Header({ state, status }: Props) {
     <header className={"header" + (status.loaded ? "" : " loading")} data-orientation="true">
 
       <div className="header--left flex">
-        <div className="logo flex">
+        {/* <div className="logo flex">
           <Text className="logo--title" text={title} />
           <div className="flex logo--bird">
             <img src={bird} alt={title} />
           </div>
-        </div>
+        </div> */}
 
         <div className={"buttons flex onloaded"}>
 
 
           {leftTabs.map((t) => <Tab tab={t} key={t} {...{ state, opened }} />)}
-          <Tab tab={"settings"} {...{ state, opened }} />
         </div>
       </div>
 
@@ -140,9 +140,14 @@ export default function Header({ state, status }: Props) {
             ? <></>
             : <Tab tab={"history"} {...{ state, opened }} />
           }
+          <Tab tab={"settings"} {...{ state, opened }} />
 
           
         </div>
+      </div>
+
+      <div className="header--right flex onloaded">
+      <ButtonBuyCrappy />
       </div>
 
 
